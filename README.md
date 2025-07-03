@@ -1,6 +1,8 @@
-# __package_name__
+# Two Cylinder Contact
 
-__package_description__
+This project provides tools for automating the analysis of gear contact mechanics. By simplifying the complex geometry of gear teeth, it models the interaction as the contact between two cylinders with equivalent radii and involute profiles. This abstraction enables efficient computation and analysis of contact parameters such as pressure distribution, contact stresses, and deformation. The approach is particularly useful for preliminary design, optimization, and educational purposes, offering a balance between accuracy and computational simplicity.
+
+The package also includes Python 2.7 scripts compatible with Abaqus CAE 2019. These scripts automate model generation, job execution, and results extraction, streamlining the workflow for finite element analysis within Abaqus.
 
 ## Development
 

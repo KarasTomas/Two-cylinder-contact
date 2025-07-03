@@ -1,11 +1,11 @@
 [project]
-name = "package_name"
+name = "two_cylinder_contact"
 version = "0.0.1"
-description = "package description"
+description = "Tools for the automation of gear contact analysis. It utilises the simplification of gear contact as the contact of two cylinders with equivalent radii and involute profiles."
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
-authors = [{ name = "Jan Vyborny", email = "jan.vyborny2@gmail.com" }]
+authors = [{ name = "Tomas Karas", email = "tomas.karas@fs.cvut.cz" }]
 
 dependencies = []
 
