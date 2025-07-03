@@ -19,4 +19,23 @@
     "iis.configDir": "",
     // AutoDocstring settings
     "autoDocstring.docstringFormat": "google",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#30577f",
+        "activityBar.background": "#30577f",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#2e1120",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#30577f",
+        "statusBar.background": "#223e5a",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#30577f",
+        "statusBarItem.remoteBackground": "#223e5a",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#223e5a",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#223e5a99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
 }
