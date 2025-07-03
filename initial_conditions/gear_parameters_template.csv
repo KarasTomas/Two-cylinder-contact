@@ -1,0 +1,11 @@
+parameter,gear_label
+elastic_modulus,3200
+poisson_ratio,0.4
+center_distance,58.7
+pressure_angle,20
+normal_module,2.5
+face_width,10
+tooth_count_pinion,24
+tooth_count_gear,22
+profile_shift_coefficient_pinion,-0.1813
+profile_shift_coefficient_gear,0

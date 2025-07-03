@@ -7,7 +7,9 @@ requires-python = ">=3.12"
 license = "MIT"
 authors = [{ name = "Tomas Karas", email = "tomas.karas@fs.cvut.cz" }]
 
-dependencies = []
+dependencies = [
+    "pandas>=2.3.0",
+]
 
 
 [tool.uv]
