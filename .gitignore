@@ -2,7 +2,7 @@
 .venv/
 
 # VS Code settings
- .vscode/
+.vscode/
 
 # Python cache directories
 __pycache__/
@@ -44,4 +44,4 @@ htmlcov/
 # custom files
 old_scripts/
 processed_data/
-initial_conditions/
+

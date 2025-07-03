@@ -9,6 +9,7 @@ authors = [{ name = "Tomas Karas", email = "tomas.karas@fs.cvut.cz" }]
 
 dependencies = [
     "matplotlib>=3.10.3",
+    "pandas>=2.3.0",
 ]
 
 
