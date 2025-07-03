@@ -2,7 +2,7 @@
 
 import csv
 import os
-from typing import List, Tuple
+from typing import Any, List, Tuple
 
 import pandas as pd
 
@@ -95,6 +95,7 @@ def create_abaqus_config(gear_labels: List[str]) -> bool:
 
     # Default configuration parameters
     default_config = {
+        "calculate": True,
         "elastic_modulus": 3200,
         "poisson_ratio": 0.4,
         "arc_length": 6,
@@ -103,7 +104,7 @@ def create_abaqus_config(gear_labels: List[str]) -> bool:
     }
 
     # Create config data structure
-    config_data: list[list] = []
+    config_data: List[List[Any]] = []
 
     # Add default parameters (same for all geometries)
     for param_name, default_value in default_config.items():
