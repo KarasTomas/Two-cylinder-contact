@@ -1,0 +1,11 @@
+geometry_id,center_distance,pressure_angle,normal_module,face_width,tooth_count_pinion,tooth_count_gear,profile_shift_coefficient_pinion,profile_shift_coefficient_gear,elastic_modulus,poisson_ratio
+gear_173,173,20,8,5,22,22,-0.3493,0,3200,0.4
+gear_1745,174.5,20,8,5,22,22,-0.1813,0,3200,0.4
+gear_176,176,20,8,5,22,22,0,0,3200,0.4
+gear_1775,177.5,20,8,5,22,22,0.1934,0,3200,0.4
+gear_179,179,20,8,5,22,22,0.3978,0,3200,0.4
+gear_180,180,20,8,5,22,22,0.5399,0,3200,0.4
+gear_1805,180.5,20,8,5,22,22,0.6125,0,3200,0.4
+gear_182,182,20,8,5,22,22,0.8368,0,3200,0.4
+gear_1835,183.5,20,8,5,22,22,1.0700,0,3200,0.4
+gear_185,185,20,8,5,22,22,1.3116,0,3200,0.4
