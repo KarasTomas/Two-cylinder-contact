@@ -1,8 +1,7 @@
 """Tools for setting the analysis environment for the two-cylinder contact problem."""
 
-import csv
 import os
-from typing import Any, List, Tuple
+from typing import List, Tuple
 
 import pandas as pd
 
@@ -20,9 +19,10 @@ def create_directory_structure() -> None:
 
 
 def discover_gear_labels() -> Tuple[List[str], bool]:
-    """Read gear_parameters.csv and extract available gear labels from column headers.
+    """Discover geometry IDs from gear_parameters.csv where calculate is True, and check if they have corresponding data in measured_deformation.csv.
 
-    Returns list of gear labels and validation status.
+    Returns:
+        Tuple of (list of valid geometry IDs, bool indicating if files are OK)
     """
     gear_params_file = "initial_conditions/gear_parameters.csv"
     measured_data_file = "initial_conditions/measured_deformation.csv"
@@ -43,41 +43,42 @@ def discover_gear_labels() -> Tuple[List[str], bool]:
         print("❌ Required files missing! Cannot proceed.")
         return [], False
 
-    # Read gear parameters to extract labels using pandas
     try:
         gear_params_df = pd.read_csv(gear_params_file)
         measured_data_df = pd.read_csv(measured_data_file)
 
-        gear_labels = [
-            col for col in gear_params_df.columns if col.lower() != "parameter"
-        ]
-        measured_labels = [
-            col for col in measured_data_df.columns if col.lower() != "parameter"
-        ]
+        # Get geometry_ids where calculate is True/1/yes
+        calc_mask = (
+            gear_params_df["calculate"]
+            .astype(str)
+            .str.lower()
+            .isin(["true", "1", "yes"])
+        )
+        gear_labels = gear_params_df.loc[calc_mask, "geometry_id"].astype(str).tolist()
+
+        # Get geometry_ids present in measured_deformation.csv
+        measured_labels = measured_data_df["geometry_id"].astype(str).unique().tolist()
 
         print("\n--- Gear Labels Analysis ---")
         print(
-            f"📊 Found {len(gear_labels)} geometries in gear_parameters.csv: {gear_labels}"
+            f"📊 Found {len(gear_labels)} geometries to calculate in gear_parameters.csv: {gear_labels}"
         )
         print(
             f"📊 Found {len(measured_labels)} geometries in measured_deformation.csv: {measured_labels}"
         )
 
         # Check for matching labels
-        matching_labels = set(gear_labels) & set(measured_labels)
-        missing_in_measured = set(gear_labels) - set(measured_labels)
-        missing_in_params = set(measured_labels) - set(gear_labels)
+        matching_labels = sorted(set(gear_labels) & set(measured_labels))
+        missing_in_measured = sorted(set(gear_labels) - set(measured_labels))
 
         if matching_labels:
-            print(f"✅ Matching geometries: {sorted(matching_labels)}")
-        if missing_in_measured:
             print(
-                f"⚠️  Missing in measured_deformation.csv: {sorted(missing_in_measured)}"
+                f"✅ Geometries with both parameters and measured data: {matching_labels}"
             )
-        if missing_in_params:
-            print(f"⚠️  Missing in gear_parameters.csv: {sorted(missing_in_params)}")
+        if missing_in_measured:
+            print(f"⚠️  Missing measured data for: {missing_in_measured}")
 
-        return sorted(matching_labels), True
+        return matching_labels, True
 
     except Exception as e:
         print(f"❌ Error reading CSV files: {e}")
@@ -85,48 +86,41 @@ def discover_gear_labels() -> Tuple[List[str], bool]:
 
 
 def create_abaqus_config(gear_labels: List[str]) -> bool:
-    """Create abaqus_config.csv with configuration for all gear geometries.
-
-    Format: parameter,gear_label1,gear_label2,...
-    """
+    """Create abaqus_config.csv with one row per geometry, columns for all config parameters."""
     config_file = "processed_data/abaqus_config.csv"
+    gear_params_file = "initial_conditions/gear_parameters.csv"
 
     print("\n--- Creating Configuration ---")
 
     # Default configuration parameters
     default_config = {
         "calculate": True,
-        "elastic_modulus": 3200,
-        "poisson_ratio": 0.4,
         "arc_length": 6,
-        "available_load_types": "F,D",
         "selected_load_type": "D",
     }
 
-    # Create config data structure
-    config_data: List[List[Any]] = []
-
-    # Add default parameters (same for all geometries)
-    for param_name, default_value in default_config.items():
-        row = [param_name] + [default_value] * len(gear_labels)
-        config_data.append(row)
-
-    # Add model_name_prefix (unique for each geometry)
-    model_prefix_row = ["model_name_prefix"] + [f"{label}" for label in gear_labels]
-    config_data.append(model_prefix_row)
-
-    # Write to CSV
     try:
-        with open(config_file, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f)
+        gear_params_df = pd.read_csv(gear_params_file)
+        config_df = gear_params_df[
+            gear_params_df["geometry_id"].isin(gear_labels)
+        ].copy()
 
-            # Write header
-            header = ["parameter"] + gear_labels
-            writer.writerow(header)
+        # Set/overwrite default config values
+        for key, value in default_config.items():
+            config_df[key] = value
 
-            # Write config data
-            writer.writerows(config_data)
+        # Keep only relevant columns (add/remove as needed)
+        columns = [
+            "geometry_id",
+            "calculate",
+            "elastic_modulus",
+            "poisson_ratio",
+            "arc_length",
+            "selected_load_type",
+        ]
+        config_df = config_df[columns]
 
+        config_df.to_csv(config_file, index=False)
         print(f"✅ Created configuration file: {config_file}")
         return True
 
@@ -154,60 +148,60 @@ def validate_data_completeness(gear_labels: List[str]) -> bool:
 
     gear_params_file = "initial_conditions/gear_parameters.csv"
     measured_data_file = "initial_conditions/measured_deformation.csv"
+    template_file = "initial_conditions/gear_parameters_template.csv"
 
     try:
-        # Read both files
         gear_params_df = pd.read_csv(gear_params_file)
         measured_data_df = pd.read_csv(measured_data_file)
 
-        # Check for required parameters in gear_parameters.csv
-        available_gear_params = (
-            gear_params_df["parameter"].tolist()
-            if "parameter" in gear_params_df.columns
-            else []
-        )
-
-        # Read template to get expected parameters
-        template_file = "initial_conditions/gear_parameters_template.csv"
-        expected_params: List[str] = []
+        # Optionally load required columns from template
+        required_columns = [
+            "geometry_id",
+            "center_distance",
+            "pressure_angle",
+            "normal_module",
+            "face_width",
+            "tooth_count_pinion",
+            "tooth_count_gear",
+            "profile_shift_coefficient_pinion",
+            "profile_shift_coefficient_gear",
+            "elastic_modulus",
+            "poisson_ratio",
+            "calculate",
+        ]
         if os.path.exists(template_file):
-            try:
-                template_df = pd.read_csv(template_file)
-                expected_params = (
-                    template_df["parameter"].tolist()
-                    if "parameter" in template_df.columns
-                    else []
-                )
-            except Exception:
-                pass
+            template_df = pd.read_csv(template_file)
+            if "parameter" in template_df.columns:
+                required_columns = template_df["parameter"].tolist()
 
-        print(
-            f"📋 Available parameters: {len(available_gear_params)} / {len(expected_params)} from template"
-        )
-
-        # Check data completeness for each geometry
         all_complete = True
         for label in gear_labels:
             issues = []
 
-            # Check if geometry has data in both files
-            if label not in gear_params_df.columns:
-                issues.append("missing gear parameters")
-            if label not in measured_data_df.columns:
-                issues.append("missing measured data")
+            # Check gear_parameters.csv row
+            row = gear_params_df[gear_params_df["geometry_id"] == label]
+            if row.empty:
+                issues.append("missing in gear_parameters.csv")
+            else:
+                for col in required_columns:
+                    if (
+                        col not in row.columns
+                        or pd.isnull(row.iloc[0][col])
+                        or str(row.iloc[0][col]).strip() == ""
+                    ):
+                        issues.append(f"missing or empty: {col}")
 
-            # Check for empty values
-            if label in gear_params_df.columns:
-                empty_params = gear_params_df[label].isnull().sum()
-                if empty_params > 0:
-                    issues.append(f"{empty_params} empty parameter values")
+            # Check measured_deformation.csv rows
+            md_rows = measured_data_df[measured_data_df["geometry_id"] == label]
+            if md_rows.empty:
+                issues.append("missing in measured_deformation.csv")
+            else:
+                if (
+                    md_rows["g_alpha"].isnull().any()
+                    or md_rows["contact_width_S"].isnull().any()
+                ):
+                    issues.append("missing or empty g_alpha/contact_width_S")
 
-            if label in measured_data_df.columns:
-                empty_measured = measured_data_df[label].isnull().sum()
-                if empty_measured > 0:
-                    issues.append(f"{empty_measured} empty measured values")
-
-            # Report status
             if issues:
                 print(f"⚠️  {label}: {', '.join(issues)}")
                 all_complete = False
