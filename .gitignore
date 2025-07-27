@@ -3,6 +3,7 @@
 
 # VS Code settings
 .vscode/
+.vscode/
 
 # Python cache directories
 __pycache__/
