@@ -1,0 +1,2484 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(modelType=STANDARD_EXPLICIT, name='gear_179_rP_24,2_rG_44,28_D_0,03')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -24.1966876876877), direction=CLOCKWISE, point1=(
+    -24.1966876876877, -24.1966876876877), point2=(24.1966876876877, 
+    -24.1966876876877))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(-24.1966876876877, -24.1966876876877), point2=(24.1966876876877, 
+    -24.1966876876877))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].Part(dimensionality=TWO_D_PLANAR
+    , name='Pinion', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].BaseShell(
+    sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -24.1966876876877), direction=COUNTERCLOCKWISE, point1=(
+    22.1966876876877, -24.1966876876877), point2=(-22.1966876876877, 
+    -24.1966876876877))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4]
+    , radius=22.1966876876877, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -24.1966876876877), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -24.1966876876877), point2=(4.83933753753754, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -24.1966876876877), point2=(-4.83933753753754, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[9]
+    , textPoint=(3.14194297790527, 3.94467803991699), value=14.2075097846314)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 44.2753123123123), direction=CLOCKWISE, point1=(
+    44.2753123123123, 44.2753123123123), point2=(-44.2753123123123, 
+    44.2753123123123))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(44.2753123123123, 44.2753123123123), point2=(-44.2753123123123, 
+    44.2753123123123))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].Part(dimensionality=TWO_D_PLANAR
+    , name='Gear', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].BaseShell(sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 44.2753123123123), direction=COUNTERCLOCKWISE, point1=(
+    -42.2753123123123, 44.2753123123123), point2=(42.2753123123123, 
+    44.2753123123123))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4]
+    , radius=42.2753123123123, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 44.2753123123123), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 44.2753123123123), point2=(8.85506246246246, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 44.2753123123123), point2=(-8.85506246246246, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'].geometry[9]
+    , textPoint=(-3.14194297790527, -3.94467803991699), value=7.76447774447195)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].Material(name='plexiglass')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].materials['plexiglass'].Elastic(
+    table=((3200.0, 0.4), ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].HomogeneousSolidSection(
+    material='plexiglass', name='Section-1', thickness=None)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].Set(faces=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='gear_set')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].sets['gear_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].Set(faces=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='pinion_set')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].sets['pinion_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.Instance(dependent=
+    ON, name='Gear-1', part=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.Instance(dependent=
+    ON, name='Pinion-1', part=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].StaticStep(adaptiveDampingRatio=
+    0.05, continueDampingFactors=True, initialInc=0.01, maxInc=0.1, name='load'
+    , nlgeom=ON, previous='Initial', stabilizationMethod=
+    DISSIPATED_ENERGY_FRACTION)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].Set(edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), name='gear_edge')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#211 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#28 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].generateMesh()
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].Set(edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), name='pinion_edge')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#31 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#202 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].generateMesh()
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Pinion'].DatumPointByCoordinate(
+    coords=(0.0, -29.1966876876877, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].parts['Gear'].DatumPointByCoordinate(
+    coords=(0.0, 49.2753123123123, 0.0))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.regenerate()
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.instances['Pinion-1'].datums[16])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.instances['Gear-1'].datums[16])
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.features.changeKey(
+    fromName='RP-1', toName='Pinion_RP')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.features.changeKey(
+    fromName='RP-2', toName='Gear_RP')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.referencePoints[6], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Pinion_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=ON, u2=ON, ur3=ON)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.referencePoints[7], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Gear_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    mask=('[#444 ]', ), )), u1=OFF, u2=ON, ur3=OFF)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].ContactProperty('IntProp-1')
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, clearanceAtZeroContactPressure=0.0, 
+    constraintEnforcementMethod=AUGMENTED_LAGRANGE, contactStiffness=DEFAULT, 
+    contactStiffnessScaleFactor=1.0, pressureOverclosure=HARD)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.Surface(name=
+    'm_Surf_pinion', side1Edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.Surface(name=
+    's_Surf_gear', side1Edges=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].SurfaceToSurfaceContactStd(
+    adjustMethod=NONE, clearanceRegion=None, createStepName='Initial', 
+    datumAxis=None, initialClearance=OMIT, interactionProperty='IntProp-1', 
+    master=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.surfaces['m_Surf_pinion']
+    , name='cylinder_contact', slave=
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.surfaces['s_Surf_gear']
+    , sliding=SMALL, thickness=ON)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].EncastreBC(createStepName=
+    'Initial', localCsys=None, name='Encastre_pinion', region=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.referencePoints[6], 
+    )))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_disp_pinion', region=Region(
+    edges=mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=UNSET, u2=SET, ur3=UNSET)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_free_gear', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.referencePoints[7], 
+    )), u1=SET, u2=UNSET, ur3=SET)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='load', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='Displacement', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.referencePoints[7], 
+    )), u1=UNSET, u2=-0.0306192650973429, ur3=UNSET)
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 
+    'CDSTRESS', 'CDISP', 'CFORCE', 'CSTATUS'))
+mdb.models['gear_179_rP_24,2_rG_44,28_D_0,03'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='gear_179_rP_24,2_rG_44,28_D_0,03'
+    , modelPrint=OFF, multiprocessingMode=DEFAULT, name=
+    'gear_179_rP_24,2_rG_44,28_D_0,03_res', nodalOutputPrecision=FULL, numCpus=
+    4, numDomains=4, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', 
+    type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Model(modelType=STANDARD_EXPLICIT, name=
+    'gear_179_rP_24,99_rG_43,48_D_0,03')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -24.9878278278278), direction=CLOCKWISE, point1=(
+    -24.9878278278278, -24.9878278278278), point2=(24.9878278278278, 
+    -24.9878278278278))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(-24.9878278278278, -24.9878278278278), point2=(24.9878278278278, 
+    -24.9878278278278))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].Part(dimensionality=
+    TWO_D_PLANAR, name='Pinion', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].BaseShell(
+    sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -24.9878278278278), direction=COUNTERCLOCKWISE, point1=(
+    22.9878278278278, -24.9878278278278), point2=(-22.9878278278278, 
+    -24.9878278278278))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4]
+    , radius=22.9878278278278, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -24.9878278278278), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -24.9878278278278), point2=(4.99756556556557, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -24.9878278278278), point2=(-4.99756556556557, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[9]
+    , textPoint=(3.14194297790527, 3.94467803991699), value=13.7576855198133)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 43.4841721721722), direction=CLOCKWISE, point1=(
+    43.4841721721722, 43.4841721721722), point2=(-43.4841721721722, 
+    43.4841721721722))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(43.4841721721722, 43.4841721721722), point2=(-43.4841721721722, 
+    43.4841721721722))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].Part(dimensionality=
+    TWO_D_PLANAR, name='Gear', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].BaseShell(sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 43.4841721721722), direction=COUNTERCLOCKWISE, point1=(
+    -41.4841721721722, 43.4841721721722), point2=(41.4841721721722, 
+    43.4841721721722))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4]
+    , radius=41.4841721721722, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 43.4841721721722), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 43.4841721721722), point2=(8.69683443443443, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 43.4841721721722), point2=(-8.69683443443443, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'].geometry[9]
+    , textPoint=(-3.14194297790527, -3.94467803991699), value=7.90574270834328)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].Material(name='plexiglass')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].materials['plexiglass'].Elastic(
+    table=((3200.0, 0.4), ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].HomogeneousSolidSection(
+    material='plexiglass', name='Section-1', thickness=None)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].Set(faces=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='gear_set')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].sets['gear_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].Set(faces=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='pinion_set')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].sets['pinion_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.Instance(
+    dependent=ON, name='Gear-1', part=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.Instance(
+    dependent=ON, name='Pinion-1', part=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].StaticStep(
+    adaptiveDampingRatio=0.05, continueDampingFactors=True, initialInc=0.01, 
+    maxInc=0.1, name='load', nlgeom=ON, previous='Initial', 
+    stabilizationMethod=DISSIPATED_ENERGY_FRACTION)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].Set(edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), name='gear_edge')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#211 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#28 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].generateMesh()
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].Set(edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), name='pinion_edge')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#31 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#202 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].generateMesh()
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Pinion'].DatumPointByCoordinate(
+    coords=(0.0, -29.9878278278278, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].parts['Gear'].DatumPointByCoordinate(
+    coords=(0.0, 48.4841721721722, 0.0))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.regenerate()
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.instances['Pinion-1'].datums[16])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.instances['Gear-1'].datums[16])
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.features.changeKey(
+    fromName='RP-1', toName='Pinion_RP')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.features.changeKey(
+    fromName='RP-2', toName='Gear_RP')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.referencePoints[6], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Pinion_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=ON, u2=ON, ur3=ON)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.referencePoints[7], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Gear_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    mask=('[#444 ]', ), )), u1=OFF, u2=ON, ur3=OFF)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].ContactProperty('IntProp-1')
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, clearanceAtZeroContactPressure=0.0, 
+    constraintEnforcementMethod=AUGMENTED_LAGRANGE, contactStiffness=DEFAULT, 
+    contactStiffnessScaleFactor=1.0, pressureOverclosure=HARD)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.Surface(name=
+    'm_Surf_pinion', side1Edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.Surface(name=
+    's_Surf_gear', side1Edges=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].SurfaceToSurfaceContactStd(
+    adjustMethod=NONE, clearanceRegion=None, createStepName='Initial', 
+    datumAxis=None, initialClearance=OMIT, interactionProperty='IntProp-1', 
+    master=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.surfaces['m_Surf_pinion']
+    , name='cylinder_contact', slave=
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.surfaces['s_Surf_gear']
+    , sliding=SMALL, thickness=ON)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].EncastreBC(createStepName=
+    'Initial', localCsys=None, name='Encastre_pinion', region=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.referencePoints[6], 
+    )))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_disp_pinion', region=Region(
+    edges=mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=UNSET, u2=SET, ur3=UNSET)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_free_gear', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.referencePoints[7], 
+    )), u1=SET, u2=UNSET, ur3=SET)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='load', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='Displacement', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.referencePoints[7], 
+    )), u1=UNSET, u2=-0.0332396859372323, ur3=UNSET)
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 
+    'CDSTRESS', 'CDISP', 'CFORCE', 'CSTATUS'))
+mdb.models['gear_179_rP_24,99_rG_43,48_D_0,03'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model=
+    'gear_179_rP_24,99_rG_43,48_D_0,03', modelPrint=OFF, multiprocessingMode=
+    DEFAULT, name='gear_179_rP_24,99_rG_43,48_D_0,03_res', 
+    nodalOutputPrecision=FULL, numCpus=4, numDomains=4, numGPUs=0, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Model(modelType=STANDARD_EXPLICIT, name=
+    'gear_179_rP_25,81_rG_42,66_D_0,03')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -25.8133653653654), direction=CLOCKWISE, point1=(
+    -25.8133653653654, -25.8133653653654), point2=(25.8133653653654, 
+    -25.8133653653654))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(-25.8133653653654, -25.8133653653654), point2=(25.8133653653654, 
+    -25.8133653653654))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].Part(dimensionality=
+    TWO_D_PLANAR, name='Pinion', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].BaseShell(
+    sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -25.8133653653654), direction=COUNTERCLOCKWISE, point1=(
+    23.8133653653654, -25.8133653653654), point2=(-23.8133653653654, 
+    -25.8133653653654))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4]
+    , radius=23.8133653653654, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -25.8133653653654), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -25.8133653653654), point2=(5.16267307307307, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, -25.8133653653654), point2=(-5.16267307307307, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[9]
+    , textPoint=(3.14194297790527, 3.94467803991699), value=13.317700819427)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 42.6586346346346), direction=CLOCKWISE, point1=(
+    42.6586346346346, 42.6586346346346), point2=(-42.6586346346346, 
+    42.6586346346346))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(42.6586346346346, 42.6586346346346), point2=(-42.6586346346346, 
+    42.6586346346346))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].Part(dimensionality=
+    TWO_D_PLANAR, name='Gear', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].BaseShell(sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 42.6586346346346), direction=COUNTERCLOCKWISE, point1=(
+    -40.6586346346346, 42.6586346346346), point2=(40.6586346346346, 
+    42.6586346346346))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4]
+    , radius=40.6586346346346, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 42.6586346346346), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 42.6586346346346), point2=(8.53172692692693, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].Line(
+    point1=(0.0, 42.6586346346346), point2=(-8.53172692692693, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'].geometry[9]
+    , textPoint=(-3.14194297790527, -3.94467803991699), value=8.05873605714006)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__'])
+del mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].sketches['__profile__']
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].Material(name='plexiglass')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].materials['plexiglass'].Elastic(
+    table=((3200.0, 0.4), ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].HomogeneousSolidSection(
+    material='plexiglass', name='Section-1', thickness=None)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].Set(faces=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='gear_set')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].sets['gear_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].Set(faces=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='pinion_set')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].sets['pinion_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.Instance(
+    dependent=ON, name='Gear-1', part=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.Instance(
+    dependent=ON, name='Pinion-1', part=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].StaticStep(
+    adaptiveDampingRatio=0.05, continueDampingFactors=True, initialInc=0.01, 
+    maxInc=0.1, name='load', nlgeom=ON, previous='Initial', 
+    stabilizationMethod=DISSIPATED_ENERGY_FRACTION)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].Set(edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), name='gear_edge')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#211 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#28 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].generateMesh()
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].Set(edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), name='pinion_edge')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#31 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#202 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].generateMesh()
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Pinion'].DatumPointByCoordinate(
+    coords=(0.0, -30.8133653653654, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].parts['Gear'].DatumPointByCoordinate(
+    coords=(0.0, 47.6586346346346, 0.0))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.regenerate()
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.instances['Pinion-1'].datums[16])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.instances['Gear-1'].datums[16])
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.features.changeKey(
+    fromName='RP-1', toName='Pinion_RP')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.features.changeKey(
+    fromName='RP-2', toName='Gear_RP')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.referencePoints[6], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Pinion_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=ON, u2=ON, ur3=ON)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.referencePoints[7], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Gear_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    mask=('[#444 ]', ), )), u1=OFF, u2=ON, ur3=OFF)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].ContactProperty('IntProp-1')
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, clearanceAtZeroContactPressure=0.0, 
+    constraintEnforcementMethod=AUGMENTED_LAGRANGE, contactStiffness=DEFAULT, 
+    contactStiffnessScaleFactor=1.0, pressureOverclosure=HARD)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.Surface(name=
+    'm_Surf_pinion', side1Edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.Surface(name=
+    's_Surf_gear', side1Edges=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].SurfaceToSurfaceContactStd(
+    adjustMethod=NONE, clearanceRegion=None, createStepName='Initial', 
+    datumAxis=None, initialClearance=OMIT, interactionProperty='IntProp-1', 
+    master=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.surfaces['m_Surf_pinion']
+    , name='cylinder_contact', slave=
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.surfaces['s_Surf_gear']
+    , sliding=SMALL, thickness=ON)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].EncastreBC(createStepName=
+    'Initial', localCsys=None, name='Encastre_pinion', region=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.referencePoints[6], 
+    )))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_disp_pinion', region=Region(
+    edges=mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=UNSET, u2=SET, ur3=UNSET)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_free_gear', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.referencePoints[7], 
+    )), u1=SET, u2=UNSET, ur3=SET)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].DisplacementBC(amplitude=UNSET, 
+    createStepName='load', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='Displacement', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.referencePoints[7], 
+    )), u1=UNSET, u2=-0.0348506799846397, ur3=UNSET)
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 
+    'CDSTRESS', 'CDISP', 'CFORCE', 'CSTATUS'))
+mdb.models['gear_179_rP_25,81_rG_42,66_D_0,03'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model=
+    'gear_179_rP_25,81_rG_42,66_D_0,03', modelPrint=OFF, multiprocessingMode=
+    DEFAULT, name='gear_179_rP_25,81_rG_42,66_D_0,03_res', 
+    nodalOutputPrecision=FULL, numCpus=4, numDomains=4, numGPUs=0, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Model(modelType=STANDARD_EXPLICIT, name='gear_179_rP_26,6_rG_41,87_D_0,04')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -26.6045055055055), direction=CLOCKWISE, point1=(
+    -26.6045055055055, -26.6045055055055), point2=(26.6045055055055, 
+    -26.6045055055055))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(-26.6045055055055, -26.6045055055055), point2=(26.6045055055055, 
+    -26.6045055055055))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].Part(dimensionality=TWO_D_PLANAR
+    , name='Pinion', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].BaseShell(
+    sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -26.6045055055055), direction=COUNTERCLOCKWISE, point1=(
+    24.6045055055055, -26.6045055055055), point2=(-24.6045055055055, 
+    -26.6045055055055))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4]
+    , radius=24.6045055055055, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -26.6045055055055), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -26.6045055055055), point2=(5.3209011011011, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -26.6045055055055), point2=(-5.3209011011011, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[9]
+    , textPoint=(3.14194297790527, 3.94467803991699), value=12.9216713690602)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 41.8674944944945), direction=CLOCKWISE, point1=(
+    41.8674944944945, 41.8674944944945), point2=(-41.8674944944945, 
+    41.8674944944945))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(41.8674944944945, 41.8674944944945), point2=(-41.8674944944945, 
+    41.8674944944945))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].Part(dimensionality=TWO_D_PLANAR
+    , name='Gear', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].BaseShell(sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 41.8674944944945), direction=COUNTERCLOCKWISE, point1=(
+    -39.8674944944945, 41.8674944944945), point2=(39.8674944944945, 
+    41.8674944944945))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4]
+    , radius=39.8674944944945, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 41.8674944944945), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 41.8674944944945), point2=(8.3734988988989, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 41.8674944944945), point2=(-8.3734988988989, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'].geometry[9]
+    , textPoint=(-3.14194297790527, -3.94467803991699), value=8.2110162365627)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].Material(name='plexiglass')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].materials['plexiglass'].Elastic(
+    table=((3200.0, 0.4), ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].HomogeneousSolidSection(
+    material='plexiglass', name='Section-1', thickness=None)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].Set(faces=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='gear_set')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].sets['gear_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].Set(faces=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='pinion_set')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].sets['pinion_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.Instance(dependent=
+    ON, name='Gear-1', part=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.Instance(dependent=
+    ON, name='Pinion-1', part=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].StaticStep(adaptiveDampingRatio=
+    0.05, continueDampingFactors=True, initialInc=0.01, maxInc=0.1, name='load'
+    , nlgeom=ON, previous='Initial', stabilizationMethod=
+    DISSIPATED_ENERGY_FRACTION)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].Set(edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), name='gear_edge')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#211 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#28 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].generateMesh()
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].Set(edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), name='pinion_edge')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#31 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#202 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].generateMesh()
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Pinion'].DatumPointByCoordinate(
+    coords=(0.0, -31.6045055055055, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].parts['Gear'].DatumPointByCoordinate(
+    coords=(0.0, 46.8674944944945, 0.0))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.regenerate()
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.instances['Pinion-1'].datums[16])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.instances['Gear-1'].datums[16])
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.features.changeKey(
+    fromName='RP-1', toName='Pinion_RP')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.features.changeKey(
+    fromName='RP-2', toName='Gear_RP')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.referencePoints[6], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Pinion_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=ON, u2=ON, ur3=ON)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.referencePoints[7], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Gear_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    mask=('[#444 ]', ), )), u1=OFF, u2=ON, ur3=OFF)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].ContactProperty('IntProp-1')
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, clearanceAtZeroContactPressure=0.0, 
+    constraintEnforcementMethod=AUGMENTED_LAGRANGE, contactStiffness=DEFAULT, 
+    contactStiffnessScaleFactor=1.0, pressureOverclosure=HARD)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.Surface(name=
+    'm_Surf_pinion', side1Edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.Surface(name=
+    's_Surf_gear', side1Edges=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].SurfaceToSurfaceContactStd(
+    adjustMethod=NONE, clearanceRegion=None, createStepName='Initial', 
+    datumAxis=None, initialClearance=OMIT, interactionProperty='IntProp-1', 
+    master=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.surfaces['m_Surf_pinion']
+    , name='cylinder_contact', slave=
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.surfaces['s_Surf_gear']
+    , sliding=SMALL, thickness=ON)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].EncastreBC(createStepName=
+    'Initial', localCsys=None, name='Encastre_pinion', region=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.referencePoints[6], 
+    )))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_disp_pinion', region=Region(
+    edges=mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=UNSET, u2=SET, ur3=UNSET)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_free_gear', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.referencePoints[7], 
+    )), u1=SET, u2=UNSET, ur3=SET)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='load', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='Displacement', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.referencePoints[7], 
+    )), u1=UNSET, u2=-0.0353057911192458, ur3=UNSET)
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 
+    'CDSTRESS', 'CDISP', 'CFORCE', 'CSTATUS'))
+mdb.models['gear_179_rP_26,6_rG_41,87_D_0,04'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='gear_179_rP_26,6_rG_41,87_D_0,04'
+    , modelPrint=OFF, multiprocessingMode=DEFAULT, name=
+    'gear_179_rP_26,6_rG_41,87_D_0,04_res', nodalOutputPrecision=FULL, numCpus=
+    4, numDomains=4, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', 
+    type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Model(modelType=STANDARD_EXPLICIT, name=
+    'gear_179_rP_27,43_rG_41,04_D_0,04')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -27.430043043043), direction=CLOCKWISE, point1=(
+    -27.430043043043, -27.430043043043), point2=(27.430043043043, 
+    -27.430043043043))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(-27.430043043043, -27.430043043043), point2=(27.430043043043, 
+    -27.430043043043))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].Part(dimensionality=
+    TWO_D_PLANAR, name='Pinion', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].BaseShell(
+    sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -27.430043043043), direction=COUNTERCLOCKWISE, point1=(
+    25.430043043043, -27.430043043043), point2=(-25.430043043043, 
+    -27.430043043043))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4]
+    , radius=25.430043043043, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -27.430043043043), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -27.430043043043), point2=(5.48600860860861, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -27.430043043043), point2=(-5.48600860860861, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[9]
+    , textPoint=(3.14194297790527, 3.94467803991699), value=12.5327793521521)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 41.041956956957), direction=CLOCKWISE, point1=(
+    41.041956956957, 41.041956956957), point2=(-41.041956956957, 
+    41.041956956957))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(41.041956956957, 41.041956956957), point2=(-41.041956956957, 
+    41.041956956957))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].Part(dimensionality=
+    TWO_D_PLANAR, name='Gear', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].BaseShell(sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 41.041956956957), direction=COUNTERCLOCKWISE, point1=(
+    -39.041956956957, 41.041956956957), point2=(39.041956956957, 
+    41.041956956957))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4]
+    , radius=39.041956956957, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 41.041956956957), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 41.041956956957), point2=(8.20839139139139, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 41.041956956957), point2=(-8.20839139139139, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'].geometry[9]
+    , textPoint=(-3.14194297790527, -3.94467803991699), value=8.37617654146049)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].Material(name='plexiglass')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].materials['plexiglass'].Elastic(
+    table=((3200.0, 0.4), ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].HomogeneousSolidSection(
+    material='plexiglass', name='Section-1', thickness=None)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].Set(faces=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='gear_set')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].sets['gear_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].Set(faces=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='pinion_set')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].sets['pinion_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.Instance(
+    dependent=ON, name='Gear-1', part=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.Instance(
+    dependent=ON, name='Pinion-1', part=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].StaticStep(
+    adaptiveDampingRatio=0.05, continueDampingFactors=True, initialInc=0.01, 
+    maxInc=0.1, name='load', nlgeom=ON, previous='Initial', 
+    stabilizationMethod=DISSIPATED_ENERGY_FRACTION)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].Set(edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), name='gear_edge')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#211 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#28 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].generateMesh()
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].Set(edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), name='pinion_edge')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#31 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#202 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].generateMesh()
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Pinion'].DatumPointByCoordinate(
+    coords=(0.0, -32.430043043043, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].parts['Gear'].DatumPointByCoordinate(
+    coords=(0.0, 46.041956956957, 0.0))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.regenerate()
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.instances['Pinion-1'].datums[16])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.instances['Gear-1'].datums[16])
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.features.changeKey(
+    fromName='RP-1', toName='Pinion_RP')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.features.changeKey(
+    fromName='RP-2', toName='Gear_RP')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.referencePoints[6], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Pinion_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=ON, u2=ON, ur3=ON)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.referencePoints[7], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Gear_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    mask=('[#444 ]', ), )), u1=OFF, u2=ON, ur3=OFF)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].ContactProperty('IntProp-1')
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, clearanceAtZeroContactPressure=0.0, 
+    constraintEnforcementMethod=AUGMENTED_LAGRANGE, contactStiffness=DEFAULT, 
+    contactStiffnessScaleFactor=1.0, pressureOverclosure=HARD)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.Surface(name=
+    'm_Surf_pinion', side1Edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.Surface(name=
+    's_Surf_gear', side1Edges=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].SurfaceToSurfaceContactStd(
+    adjustMethod=NONE, clearanceRegion=None, createStepName='Initial', 
+    datumAxis=None, initialClearance=OMIT, interactionProperty='IntProp-1', 
+    master=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.surfaces['m_Surf_pinion']
+    , name='cylinder_contact', slave=
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.surfaces['s_Surf_gear']
+    , sliding=SMALL, thickness=ON)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].EncastreBC(createStepName=
+    'Initial', localCsys=None, name='Encastre_pinion', region=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.referencePoints[6], 
+    )))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_disp_pinion', region=Region(
+    edges=mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=UNSET, u2=SET, ur3=UNSET)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_free_gear', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.referencePoints[7], 
+    )), u1=SET, u2=UNSET, ur3=SET)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='load', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='Displacement', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.referencePoints[7], 
+    )), u1=UNSET, u2=-0.0358231999307889, ur3=UNSET)
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 
+    'CDSTRESS', 'CDISP', 'CFORCE', 'CSTATUS'))
+mdb.models['gear_179_rP_27,43_rG_41,04_D_0,04'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model=
+    'gear_179_rP_27,43_rG_41,04_D_0,04', modelPrint=OFF, multiprocessingMode=
+    DEFAULT, name='gear_179_rP_27,43_rG_41,04_D_0,04_res', 
+    nodalOutputPrecision=FULL, numCpus=4, numDomains=4, numGPUs=0, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(modelType=STANDARD_EXPLICIT, name=
+    'gear_179_rP_28,26_rG_40,22_D_0,04')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -28.2555805805806), direction=CLOCKWISE, point1=(
+    -28.2555805805806, -28.2555805805806), point2=(28.2555805805806, 
+    -28.2555805805806))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(-28.2555805805806, -28.2555805805806), point2=(28.2555805805806, 
+    -28.2555805805806))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].Part(dimensionality=
+    TWO_D_PLANAR, name='Pinion', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].BaseShell(
+    sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, -28.2555805805806), direction=COUNTERCLOCKWISE, point1=(
+    26.2555805805806, -28.2555805805806), point2=(-26.2555805805806, 
+    -28.2555805805806))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4]
+    , radius=26.2555805805806, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -28.2555805805806), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -28.2555805805806), point2=(5.65111611611612, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, -28.2555805805806), point2=(-5.65111611611612, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[9]
+    , textPoint=(3.14194297790527, 3.94467803991699), value=12.1666116927982)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].ConstrainedSketch(name=
+    '__profile__', sheetSize=200.0)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 40.2164194194194), direction=CLOCKWISE, point1=(
+    40.2164194194194, 40.2164194194194), point2=(-40.2164194194194, 
+    40.2164194194194))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(40.2164194194194, 40.2164194194194), point2=(-40.2164194194194, 
+    40.2164194194194))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[3])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].Part(dimensionality=
+    TWO_D_PLANAR, name='Gear', type=DEFORMABLE_BODY)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].BaseShell(sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].ConstrainedSketch(gridSpacing=
+    2.19, name='__profile__', sheetSize=87.74, transform=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].ArcByCenterEnds(
+    center=(0.0, 40.2164194194194), direction=COUNTERCLOCKWISE, point1=(
+    -38.2164194194194, 40.2164194194194), point2=(38.2164194194194, 
+    40.2164194194194))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[4]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[2])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].RadialDimension(
+    curve=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4]
+    , radius=38.2164194194194, textPoint=(11.9338283538818, 9.0472740168457))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].ConstrainedSketch(gridSpacing=
+    3.35, name='__profile__', sheetSize=134.16, transform=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].MakeSketchTransform(
+    sketchPlane=mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 40.2164194194194), point2=(0.0, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[5]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[3]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[4]
+    , midpoint=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[5])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 40.2164194194194), point2=(8.04328388388388, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[6]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].Line(
+    point1=(0.0, 40.2164194194194), point2=(-8.04328388388388, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].vertices[7]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[4])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].setAsConstruction(
+    objectList=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[8], 
+    ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].SymmetryConstraint(
+    entity1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[10]
+    , entity2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[9]
+    , symmetryAxis=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[8])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].AngularDimension(
+    line1=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[10]
+    , line2=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'].geometry[9]
+    , textPoint=(-3.14194297790527, -3.94467803991699), value=8.54811746150863)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].PartitionFaceBySketch(
+    faces=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), sketch=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__'])
+del mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].sketches['__profile__']
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].Material(name='plexiglass')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].materials['plexiglass'].Elastic(
+    table=((3200.0, 0.4), ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].HomogeneousSolidSection(
+    material='plexiglass', name='Section-1', thickness=None)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].Set(faces=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='gear_set')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].sets['gear_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].Set(faces=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), name='pinion_set')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].sets['pinion_set']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.Instance(
+    dependent=ON, name='Gear-1', part=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.Instance(
+    dependent=ON, name='Pinion-1', part=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].StaticStep(
+    adaptiveDampingRatio=0.05, continueDampingFactors=True, initialInc=0.01, 
+    maxInc=0.1, name='load', nlgeom=ON, previous='Initial', 
+    stabilizationMethod=DISSIPATED_ENERGY_FRACTION)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].Set(edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), name='gear_edge')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#211 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].edges.getSequenceFromMask(
+    ('[#28 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].generateMesh()
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].setElementType(
+    elemTypes=(ElemType(elemCode=CPS8, elemLibrary=STANDARD), ElemType(
+    elemCode=CPS6M, elemLibrary=STANDARD)), regions=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.05)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].Set(edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), name='pinion_edge')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#31 ]', ), ), size=0.1)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end2Edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].seedEdgeByBias(
+    biasMethod=SINGLE, end1Edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), maxSize=1.0, minSize=0.05)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].edges.getSequenceFromMask(
+    ('[#202 ]', ), ), size=1.0)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].seedPart(
+    deviationFactor=0.1, minSizeFactor=0.1, size=1.0)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].generateMesh()
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Pinion'].DatumPointByCoordinate(
+    coords=(0.0, -33.2555805805806, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].parts['Gear'].DatumPointByCoordinate(
+    coords=(0.0, 45.2164194194194, 0.0))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.regenerate()
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.instances['Pinion-1'].datums[16])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.ReferencePoint(
+    point=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.instances['Gear-1'].datums[16])
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.features.changeKey(
+    fromName='RP-1', toName='Pinion_RP')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.features.changeKey(
+    fromName='RP-2', toName='Gear_RP')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.referencePoints[6], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Pinion_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=ON, u2=ON, ur3=ON)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].Coupling(controlPoint=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.referencePoints[7], 
+    )), couplingType=KINEMATIC, influenceRadius=WHOLE_SURFACE, localCsys=None, 
+    name='Gear_coupling', surface=Region(
+    side1Edges=mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    mask=('[#444 ]', ), )), u1=OFF, u2=ON, ur3=OFF)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].ContactProperty('IntProp-1')
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, clearanceAtZeroContactPressure=0.0, 
+    constraintEnforcementMethod=AUGMENTED_LAGRANGE, contactStiffness=DEFAULT, 
+    contactStiffnessScaleFactor=1.0, pressureOverclosure=HARD)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.Surface(name=
+    'm_Surf_pinion', side1Edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.Surface(name=
+    's_Surf_gear', side1Edges=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.instances['Gear-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].SurfaceToSurfaceContactStd(
+    adjustMethod=NONE, clearanceRegion=None, createStepName='Initial', 
+    datumAxis=None, initialClearance=OMIT, interactionProperty='IntProp-1', 
+    master=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.surfaces['m_Surf_pinion']
+    , name='cylinder_contact', slave=
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.surfaces['s_Surf_gear']
+    , sliding=SMALL, thickness=ON)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].EncastreBC(createStepName=
+    'Initial', localCsys=None, name='Encastre_pinion', region=Region(
+    referencePoints=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.referencePoints[6], 
+    )))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_disp_pinion', region=Region(
+    edges=mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.instances['Pinion-1'].edges.getSequenceFromMask(
+    mask=('[#504 ]', ), )), u1=UNSET, u2=SET, ur3=UNSET)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='y_free_gear', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.referencePoints[7], 
+    )), u1=SET, u2=UNSET, ur3=SET)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].DisplacementBC(amplitude=UNSET, 
+    createStepName='load', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='Displacement', region=Region(referencePoints=(
+    mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.referencePoints[7], 
+    )), u1=UNSET, u2=-0.0366589234262377, ur3=UNSET)
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 
+    'CDSTRESS', 'CDISP', 'CFORCE', 'CSTATUS'))
+mdb.models['gear_179_rP_28,26_rG_40,22_D_0,04'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model=
+    'gear_179_rP_28,26_rG_40,22_D_0,04', modelPrint=OFF, multiprocessingMode=
+    DEFAULT, name='gear_179_rP_28,26_rG_40,22_D_0,04_res', 
+    nodalOutputPrecision=FULL, numCpus=4, numDomains=4, numGPUs=0, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+# Save by tkara on 2025_07_27-17.03.37; build 2019 2018_09_24-20.41.51 157541
