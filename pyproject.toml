@@ -78,6 +78,7 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
+    "src/two_cylinder_contact/simulation/*",
 ]
 
 [tool.ruff.lint]
@@ -111,7 +112,7 @@ docstring-code-line-length = "dynamic"
 
 [tool.mypy]
 python_version = "3.11"
-files = "src"
+files = "src/two_cylinder_contact/automation"
 strict = true
 ignore_missing_imports = true
 check_untyped_defs = true

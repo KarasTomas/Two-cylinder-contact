@@ -17,7 +17,7 @@ import pandas as pd
 # ==============================================================================
 
 # 1. Geometry to tune (must match a file in 'processed_data/{GEOMETRY_SUFFIX}_simulation_data.csv')
-GEOMETRY_SUFFIX = "gear_" + "1805"
+GEOMETRY_SUFFIX = "1805"
 
 # 2. Sampling Parameters
 TARGET_POINTS = 50  # The desired number of final sample points.
@@ -42,7 +42,7 @@ OUTPUT_TO_CSV = False
 
 def load_simulation_data(geometry_label: str) -> pd.DataFrame:
     """Loads simulation data for a given geometry."""
-    file_path = f"processed_data/{geometry_label}_simulation_data.csv"
+    file_path = f"processed_data/gear_{geometry_label}_simulation_data.csv"
     if not os.path.exists(file_path):
         print(f"❌ Error: Data file not found at '{file_path}'")
         return pd.DataFrame()
