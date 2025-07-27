@@ -59,7 +59,7 @@ def load_config_file(geometry_suffix):
 
 def load_downsampled_data(geometry_suffix, selected_load_type):
     """Load downsampled data from CSV file"""
-    csv_file = "../processed_data/Gears_" + geometry_suffix + "_downsampled_data.csv"
+    csv_file = "../processed_data/gears_" + geometry_suffix + "_downsampled_data.csv"
 
     if not os.path.exists(csv_file):
         print("Error: Data file not found: " + csv_file)

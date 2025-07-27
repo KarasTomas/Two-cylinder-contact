@@ -17,7 +17,7 @@ import pandas as pd
 # ==============================================================================
 
 # 1. Geometry to tune (must match a file in 'processed_data/{GEOMETRY_SUFFIX}_simulation_data.csv')
-GEOMETRY_SUFFIX = "1805"
+GEOMETRY_SUFFIX = "179"
 
 # 2. Sampling Parameters
 TARGET_POINTS = 50  # The desired number of final sample points.
@@ -30,13 +30,12 @@ PLATEAU_THRESHOLD = 0.8  # Linear peak - Defines the vertical threshold (98% of 
 FLAT_SLOPE_TOLERANCE = 0.2  # Linear slope - Defines a "flat" slope for plateau detection (relative to max slope).
 
 # Point allocation ratios (should sum roughly to 1.0)
-PLATEAU_POINTS_RATIO = 0.25  # 25% of points on the peak plateau.
+PLATEAU_POINTS_RATIO = 0.15  # 15% of points on the peak plateau.
 MAIN_SLOPE_POINTS_RATIO = 0.45  # 45% of points on the steepest up/down slopes.
-SHALLOW_SLOPE_POINTS_RATIO = 0.30  # 30% of points on the shallow regions.
+SHALLOW_SLOPE_POINTS_RATIO = 0.40  # 40% of points on the shallow regions.
 
 # 4. Final Output Control
-OUTPUT_TO_CSV = False
-
+OUTPUT_TO_CSV = True
 # ==============================================================================
 
 
@@ -262,7 +261,7 @@ def plot_sampling_results(
 
 def save_to_csv(sampled_data: pd.DataFrame, geometry_suffix: str) -> None:
     """Saves the downsampled data to the required CSV format."""
-    output_filename = f"processed_data/Gears_{geometry_suffix}_downsampled_data.csv"
+    output_filename = f"processed_data/gears_{geometry_suffix}_downsampled_data.csv"
     output_df = pd.DataFrame(
         {
             "pinion_radius": sampled_data["rho_pinion"],
@@ -273,6 +272,39 @@ def save_to_csv(sampled_data: pd.DataFrame, geometry_suffix: str) -> None:
     )
     output_df.to_csv(output_filename, index=False)
     print(f"\n✅ Success! CSV file saved: {output_filename} ({len(output_df)} points)")
+
+
+def check_all_geometry_status():
+    """Check status of all available geometries and their CSV files"""
+    initial_conditions_path = "initial_conditions"
+    processed_data_path = "processed_data"
+
+    # Find all simulation data files
+    geometries = []
+    for fname in os.listdir(processed_data_path):
+        if fname.endswith("_simulation_data.csv"):
+            suffix = fname.replace("gear_", "").replace("_simulation_data.csv", "")
+            geometries.append(suffix)
+
+    if not geometries:
+        print("No geometries found in processed_data/")
+        return
+
+    print("\n" + "=" * 60)
+    print("GEOMETRY STATUS OVERVIEW")
+    print("=" * 60)
+    print(f"{'Geometry':<12} {'CSV Status':<15}")
+    print("-" * 60)
+
+    for geometry_suffix in sorted(geometries):
+        csv_file = f"{processed_data_path}/gears_{geometry_suffix}_downsampled_data.csv"
+        csv_status = "✅ EXISTS" if os.path.exists(csv_file) else "❌ MISSING"
+        print(f"{geometry_suffix:<12} {csv_status:<15}")
+
+    print("-" * 60)
+    print("✅ = Ready for Abaqus analysis")
+    print("❌ = Needs processing")
+    print("=" * 60)
 
 
 def main() -> None:
@@ -322,6 +354,8 @@ def main() -> None:
 
     if config["output_to_csv"]:
         save_to_csv(sampled_data, config["geometry_suffix"])
+        # Show comprehensive status of all geometries
+        check_all_geometry_status()
         print("\nNEXT STEPS:")
         print("1. Process another geometry by changing GEOMETRY_SUFFIX.")
         print("2. Once all are sampled, proceed to the Abaqus analysis.")

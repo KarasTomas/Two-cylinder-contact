@@ -80,20 +80,20 @@ def get_database_path():
     database_path = os.path.join(
         "..",
         "results",
-        "Gears_" + GEOMETRY_SUFFIX + "_results",
-        "Gears_" + GEOMETRY_SUFFIX + "_model_database.csv",
+        "gear_" + GEOMETRY_SUFFIX + "_results",
+        "gear_" + GEOMETRY_SUFFIX + "_model_database.csv",
     )
     return database_path
 
 
 def get_results_paths():
     """Get paths for ODB files and extracted data"""
-    base_path = os.path.join("..", "results", "Gears_" + GEOMETRY_SUFFIX + "_results")
+    base_path = os.path.join("..", "results", "gear_" + GEOMETRY_SUFFIX + "_results")
     paths = {
         "odb_files": os.path.join(base_path, "odb_files"),
         "extracted_data": os.path.join(base_path, "extracted_data"),
         "database": os.path.join(
-            base_path, "Gears_" + GEOMETRY_SUFFIX + "_model_database.csv"
+            base_path, "gear_" + GEOMETRY_SUFFIX + "_model_database.csv"
         ),
     }
     return paths

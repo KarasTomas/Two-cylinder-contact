@@ -9,9 +9,7 @@ import pandas as pd
 # USER CONFIGURATION
 # ==============================================================================
 GEOMETRY_SUFFIX = "179"
-CSV_FILENAME = (
-    "Gears_179_rP_23,02_rG_37,18_F_45,63_res.csv"  # Change to your actual file
-)
+CSV_FILENAME = "gear_179_rP_24,2_rG_44,28_D_0,03_res.csv"  # Change to your actual file
 # ==============================================================================
 
 
@@ -20,7 +18,7 @@ def main():
     # Path to CSV file
     csv_path = (
         Path("results")
-        / f"Gears_{GEOMETRY_SUFFIX}_results"
+        / f"gear_{GEOMETRY_SUFFIX}_results"
         / "extracted_data"
         / CSV_FILENAME
     )

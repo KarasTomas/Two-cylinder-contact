@@ -46,3 +46,5 @@ htmlcov/
 old_scripts/
 processed_data/
 initial_conditions/
+abaqus_work/
+results/

@@ -15,8 +15,8 @@ WAIT_BETWEEN_SUBMISSIONS = 0  # Seconds to wait between job submissions
 SKIP_EXISTING_ODBS = True  # Skip jobs if ODB already exists
 
 # EXECUTION CONTROL
-AUTO_START = False  # Set to True to start immediately without confirmation
-PROCESS_ALL_BATCHES = True # Set to True to process all batches automatically
+AUTO_START = True  # Set to True to start immediately without confirmation
+PROCESS_ALL_BATCHES = True  # Set to True to process all batches automatically
 STOP_AFTER_BATCH = 3  # Stop after N batches (0 = process all)
 PAUSE_BETWEEN_BATCHES = 0  # Seconds to pause between batches (0 = no pause)
 
@@ -30,8 +30,8 @@ def get_database_path():
     return os.path.join(
         "..",
         "results",
-        "Gears_" + GEOMETRY_SUFFIX + "_results",
-        "Gears_" + GEOMETRY_SUFFIX + "_model_database.csv",
+        "gear_" + GEOMETRY_SUFFIX + "_results",
+        "gear_" + GEOMETRY_SUFFIX + "_model_database.csv",
     )
 
 
@@ -111,7 +111,7 @@ def get_job_status_from_sta_file(job_name):
         os.path.join(
             "..",
             "results",
-            "Gears_" + GEOMETRY_SUFFIX + "_results",
+            "gear_" + GEOMETRY_SUFFIX + "_results",
             "odb_files",
             job_name + ".sta",
         ),
@@ -176,7 +176,7 @@ def get_comprehensive_job_status(job_name):
         os.path.join(
             "..",
             "results",
-            "Gears_" + GEOMETRY_SUFFIX + "_results",
+            "gear_" + GEOMETRY_SUFFIX + "_results",
             "odb_files",
             job_name + ".odb",
         ),
@@ -210,7 +210,7 @@ def find_all_jobs():
     search_dirs = [
         ".",
         os.path.join(
-            "..", "results", "Gears_" + GEOMETRY_SUFFIX + "_results", "odb_files"
+            "..", "results", "gear_" + GEOMETRY_SUFFIX + "_results", "odb_files"
         ),
     ]
 
@@ -219,7 +219,7 @@ def find_all_jobs():
         if os.path.exists(search_dir):
             for filename in os.listdir(search_dir):
                 if filename.endswith(".inp") and filename.startswith(
-                    "Gears_" + GEOMETRY_SUFFIX + "_"
+                    "gear_" + GEOMETRY_SUFFIX + "_"
                 ):
                     job_name = filename[:-4]  # Remove .inp extension
                     found_jobs.add(job_name)
@@ -246,6 +246,7 @@ def get_job_status_summary(jobs):
         "RUNNING": 0,
         "PENDING": 0,
         "OTHER": 0,
+        "NONE": 0,
     }
 
     for job in jobs:
@@ -259,6 +260,8 @@ def get_job_status_summary(jobs):
             status_counts["RUNNING"] += 1
         elif status == "PENDING":
             status_counts["PENDING"] += 1
+        elif status is None or status == "NONE":
+            status_counts["NONE"] += 1
         else:
             status_counts["OTHER"] += 1
 
@@ -288,7 +291,7 @@ def check_geometry_consistency():
     # Extract geometry suffixes from job names
     found_suffixes = set()
     for job_name in job_names:
-        if job_name.startswith("Gears_"):
+        if job_name.startswith("gear_"):
             parts = job_name.split("_")
             if len(parts) >= 2:
                 found_suffixes.add(parts[1])
@@ -343,6 +346,11 @@ def run_job_batch(jobs, start_index, batch_size):
 
         if status in ["ABORTED", "TERMINATED", "ERROR"]:
             print("  " + job_name + ": RETRYING (was " + status + ")")
+        
+        # Always run jobs with status None or "NONE"
+        if status is None or status == "NONE":
+            print("  " + job_name + ": SUBMITTING")
+            
 
         try:
             print("  " + job_name + ": SUBMITTING...")
@@ -412,7 +420,6 @@ def main():
 
     # Find jobs
     all_job_names, available_jobs = find_all_jobs()
-
     if not available_jobs:
         print("\nNo jobs available for geometry " + GEOMETRY_SUFFIX)
         print("Make sure you have:")
@@ -431,6 +438,8 @@ def main():
     print("  Pending: " + str(status_counts["PENDING"]))
     if status_counts["OTHER"] > 0:
         print("  Other: " + str(status_counts["OTHER"]))
+    if status_counts["NONE"] > 0:
+        print("  None: " + str(status_counts["NONE"]))
 
     # Detailed status if requested
     if VERBOSE_STATUS:
@@ -445,7 +454,7 @@ def main():
     update_all_job_statuses(available_jobs)
 
     # Check if work needed
-    jobs_to_process = status_counts["PENDING"] + status_counts["RUNNING"]
+    jobs_to_process = status_counts["PENDING"] + status_counts["RUNNING"] + status_counts["NONE"]
     if jobs_to_process == 0:
         print("\nAll jobs completed or failed - nothing to process")
         return

@@ -21,30 +21,19 @@ RESULTS_BASE_DIR = "results"
 
 
 def get_paths():
-    """Get all relevant paths for the specified geometry"""
-    script_dir = Path(__file__).parent
-
+    """Get all relevant paths for the specified geometry, relative to the cwd (src)"""
     paths = {
-        "script_dir": script_dir,
-        "abaqus_work": script_dir / ABAQUS_WORK_DIR,
-        "results_base": script_dir / RESULTS_BASE_DIR,
-        "geometry_results": script_dir
-        / RESULTS_BASE_DIR
-        / f"Gears_{GEOMETRY_SUFFIX}_results",
-        "odb_files": script_dir
-        / RESULTS_BASE_DIR
-        / f"Gears_{GEOMETRY_SUFFIX}_results"
-        / "odb_files",
-        "extracted_data": script_dir
-        / RESULTS_BASE_DIR
-        / f"Gears_{GEOMETRY_SUFFIX}_results"
-        / "extracted_data",
-        "database": script_dir
-        / RESULTS_BASE_DIR
-        / f"Gears_{GEOMETRY_SUFFIX}_results"
-        / f"Gears_{GEOMETRY_SUFFIX}_model_database.csv",
+        "abaqus_work": Path("./abaqus_work"),
+        "results_base": Path("./results"),
+        "geometry_results": Path(f"./results/gear_{GEOMETRY_SUFFIX}_results"),
+        "odb_files": Path(f"./results/gear_{GEOMETRY_SUFFIX}_results/odb_files"),
+        "extracted_data": Path(
+            f"./results/gear_{GEOMETRY_SUFFIX}_results/extracted_data"
+        ),
+        "database": Path(
+            f"./results/gear_{GEOMETRY_SUFFIX}_results/gear_{GEOMETRY_SUFFIX}_model_database.csv"
+        ),
     }
-
     return paths
 
 
