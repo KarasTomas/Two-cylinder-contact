@@ -19,7 +19,7 @@ def calculate_addendum_lowering(
     Returns:
         Addendum lowering factor
     """
-    return ((pitch_d_pinion + x1 + x2) + module - center_distance) / module
+    return (pitch_d_pinion + (x1 + x2) * module - center_distance) / module
 
 
 def calculate_contact_path_parameters(
@@ -27,6 +27,8 @@ def calculate_contact_path_parameters(
     addendum_d_pinion: float,
     addendum_d_gear: float,
     center_distance: float,
+    module: float,
+    pressure_angle: float,
 ) -> Dict[str, float]:
     """Calculate contact path parameters (PE, PF, N_1P, N_1E, etc.).
 
@@ -35,6 +37,8 @@ def calculate_contact_path_parameters(
         addendum_d_pinion: Addendum diameter of pinion [mm]
         addendum_d_gear: Addendum diameter of gear [mm]
         center_distance: Center distance [mm]
+        module: Module of the gear [mm]
+        pressure_angle: Pressure angle [rad]
 
     Returns:
         Dictionary with contact path parameters
@@ -65,6 +69,12 @@ def calculate_contact_path_parameters(
     N_2P = R_b * tan_alpha_aw
     N_2F = N_2P - PF
 
+    # Calculate path of contact
+    g_alpha = PE + PF
+
+    # Calculate profile contact ratio
+    epsilon_alpha = g_alpha / (np.pi * module * np.cos(pressure_angle))
+
     return {
         "PE": PE,
         "PF": PF,
@@ -72,13 +82,15 @@ def calculate_contact_path_parameters(
         "N_1E": N_1E,
         "N_2P": N_2P,
         "N_2F": N_2F,
+        "g_alpha": g_alpha,
+        "epsilon_alpha": epsilon_alpha,
     }
 
 
-def calculate_equivalent_radii(
+def calculate_min_equivalent_radii(
     base_d_pinion: float, contact_params: Dict[str, float]
 ) -> Dict[str, float]:
-    """Calculate equivalent radii for two-cylinder contact model.
+    """Calculate minimal equivalent radii for two-cylinder contact model.
 
     Args:
         base_d_pinion: Base diameter of pinion [mm]
@@ -109,6 +121,132 @@ def calculate_equivalent_radii(
     }
 
 
+def calculate_equivalent_rho(
+    R_b: tuple[float, float],
+    NE: tuple[float, float],
+    contact_path: List[float],
+    rho_names: tuple[str, str] = ("pinion", "gear"),
+) -> dict[str, List[float]]:
+    """Generate an array of radii and corresponding rho values for the two-cylinder contact model.
+
+    Args:
+        R_b: Base radius [mm]
+        NE: Distance from point N to start of contact path (point E or F) [mm]
+        contact_path: List of contact path points [mm]
+        rho_names: Names for rho values (default: ("pinion", "gear"))
+
+    Returns:
+        rho: List of rho values corresponding to the radii
+    """
+    eq_rho = {}
+    eq_rho["contact_path"] = contact_path
+    for r_b, n1e, rho_name in zip(R_b, NE, rho_names, strict=False):
+        alpha_y = np.arctan((n1e + np.array(contact_path)) / r_b)
+        R_y = r_b / np.cos(alpha_y)
+        rho = r_b * np.tan(alpha_y)
+        eq_rho[f"rho_{rho_name}"] = rho.tolist()
+        eq_rho[f"R_y_{rho_name}"] = R_y.tolist()
+
+    # Flip the second rho array (usually for the gear)
+    if len(rho_names) > 1:
+        eq_rho[f"rho_{rho_names[1]}"] = eq_rho[f"rho_{rho_names[1]}"][::-1]
+    return eq_rho
+
+
+def load_measured_deformation(
+    gear_label: str, file_path: str = "initial_conditions/measured_deformation.csv"
+) -> dict[str, list[float]]:
+    """Load measured deformation data for a given gear_label from CSV.
+
+    Returns:
+        Tuple of (g_alpha: list[float], contact_width_S: list[float])
+    """
+    df = pd.read_csv(file_path)
+    df_gear = df[df["geometry_id"] == gear_label]
+    measured_deformation = (
+        df_gear[["g_alpha", "contact_width_S"]].astype(float).to_dict(orient="list")
+    )
+    return measured_deformation
+
+
+def map_deformation_to_contact_path(
+    eq_rho: dict, measured_deformation: dict
+) -> np.ndarray:
+    """Interpolate measured deformation (contact_width_S) onto the eq_rho contact_path grid.
+
+    Args:
+        eq_rho: dict with "contact_path" (list of floats)
+        measured_deformation: dict with "g_alpha" and "contact_width_S" (lists of floats)
+
+    Returns:
+        interp_contact_width_S: np.ndarray, interpolated to eq_rho["contact_path"]
+    """
+    contact_path = np.array(eq_rho["contact_path"])
+    g_alpha_measured = np.array(measured_deformation["g_alpha"])
+    contact_width_S_measured = np.array(measured_deformation["contact_width_S"])
+
+    # Interpolate measured deformation onto the contact_path grid
+    interp_contact_width_S = np.interp(
+        contact_path, g_alpha_measured, contact_width_S_measured
+    )
+
+    return interp_contact_width_S
+
+
+def calculate_deformation_loading(
+    eq_rho: Dict[str, List[float]],
+    gear_label: str,
+    file_path: str = "initial_conditions/measured_deformation.csv",
+) -> dict[str, List[float]]:
+    """Calculate deformation loading for the two-cylinder contact model.
+
+    Args:
+        eq_rho: Dictionary containing equivalent radii and rho values
+        gear_label: Label identifying the specific gear geometry
+        file_path: Path to the measured deformation data file
+
+    Returns:
+        Dictionary containing deformation loading values
+    """
+    # Load measured deformation data
+    measured_deformation = load_measured_deformation(gear_label, file_path)
+
+    interp_contact_width_S = map_deformation_to_contact_path(
+        eq_rho, measured_deformation
+    )
+    deformation_loading = {
+        "contact_path": eq_rho["contact_path"],
+        "deformation_loading": interp_contact_width_S,
+    }
+    return deformation_loading
+
+
+def calculate_load_delta(sim_data: Dict[str, List[float]]) -> list[float]:
+    """Calculate the load delta from deformation loading."""
+    rho_1 = np.array(sim_data["rho_pinion"])
+    rho_2 = np.array(sim_data["rho_gear"])
+    contact_width_S = np.array(sim_data["deformation_loading"])
+
+    h1 = rho_1 - 0.5 * np.sqrt(4 * rho_1**2 - contact_width_S**2)
+    h2 = rho_2 - 0.5 * np.sqrt(4 * rho_2**2 - contact_width_S**2)
+
+    load_delta = h1 + h2
+
+    return load_delta.tolist()
+
+
+def save_simulation_data(sim_data: Dict[str, List[float]], gear_label: str) -> None:
+    """Save simulation data to a CSV file."""
+    output_file = f"processed_data/{gear_label}_simulation_data.csv"
+
+    try:
+        df = pd.DataFrame(sim_data)
+        df.to_csv(output_file, index=False, encoding="utf-8")
+
+    except Exception as e:
+        raise OSError(f"Failed to save simulation data to {output_file}: {e}") from e
+
+
 def log_calculation_results(calculated_params: Dict[str, float]) -> None:
     """Log the key calculation results for user feedback.
 
@@ -127,32 +265,30 @@ def log_calculation_results(calculated_params: Dict[str, float]) -> None:
 
 
 def save_geometry_parameters(
-    gear_label: str, calculated_params: Dict[str, float]
+    gear_label: str, input_params: Dict[str, float], calculated_params: Dict[str, float]
 ) -> None:
-    """Save calculated geometry parameters to CSV file.
-
-    Creates a structured CSV file containing all calculated geometry parameters
-    with proper units and formatting for further analysis.
+    """Save all geometry parameters (input + calculated) to CSV file.
 
     Args:
         gear_label: Label identifying the specific gear geometry
-        calculated_params: Dictionary containing calculated parameters
+        input_params: Dictionary of input parameters (center_distance, etc.)
+        calculated_params: Dictionary of calculated parameters
 
     Raises:
         OSError: If file cannot be written to disk
-        ValueError: If calculated_params contains invalid data
+        ValueError: If parameters contain invalid data
     """
     output_file = f"processed_data/{gear_label}_geometry_parameters.csv"
 
     try:
-        # Create structured parameter data with proper units
-        param_data = create_parameter_data_structure(calculated_params)
+        # Merge input and calculated parameters, input first
+        all_params = {**input_params, **calculated_params}
+        param_data = create_parameter_data_structure(all_params)
 
-        # Convert to DataFrame and save
         df = pd.DataFrame(param_data)
         df.to_csv(output_file, index=False, encoding="utf-8")
 
-        print(f"✅ Saved {len(calculated_params)} geometry parameters to {output_file}")
+        print(f"✅ Saved {len(all_params)} geometry parameters to {output_file}")
 
     except Exception as e:
         raise OSError(
@@ -161,12 +297,12 @@ def save_geometry_parameters(
 
 
 def create_parameter_data_structure(
-    calculated_params: Dict[str, float],
+    params: Dict[str, float],
 ) -> List[Dict[str, str]]:
     """Create structured parameter data with appropriate units.
 
     Args:
-        calculated_params: Dictionary containing calculated parameters
+        params: Dictionary containing all parameters (input + calculated)
 
     Returns:
         List of dictionaries with parameter, value, and units columns
@@ -184,19 +320,22 @@ def create_parameter_data_structure(
             "N_1E",
             "N_2P",
             "N_2F",
+            "g_alpha",
         ],
         "pressure": ["pressure", "stress"],
         "angle": ["angle", "Alfa"],
-        "dimensionless": ["coefficient", "lowering", "calculated"],
+        "dimensionless": [
+            "coefficient",
+            "lowering",
+            "calculated",
+            "profile contact ratio",
+        ],
     }
 
     param_data = []
-    for param_name, param_value in calculated_params.items():
+    for param_name, param_value in params.items():
         units = determine_parameter_units(param_name, unit_mapping)
-
-        # Format value based on type
         formatted_value = format_parameter_value(param_value, units)
-
         param_data.append(
             {"parameter": param_name, "value": formatted_value, "units": units}
         )
@@ -212,6 +351,16 @@ def determine_parameter_units(
 
     # Explicit mapping for known parameters
     explicit_units = {
+        "center_distance": "mm",
+        "pressure_angle": "°",
+        "normal_module": "mm",
+        "face_width": "mm",
+        "tooth_count_pinion": "-",
+        "tooth_count_gear": "-",
+        "profile_shift_coefficient_pinion": "-",
+        "profile_shift_coefficient_gear": "-",
+        "elastic_modulus": "MPa",
+        "poisson_ratio": "-",
         "pitch_diameter_pinion": "mm",
         "pitch_diameter_gear": "mm",
         "base_diameter_pinion": "mm",
@@ -226,6 +375,8 @@ def determine_parameter_units(
         "N_1E": "mm",
         "N_2P": "mm",
         "N_2F": "mm",
+        "g_alpha": "mm",
+        "profile_contact_ratio": "-",
         "Alfa_y_1": "rad",
         "R_y_1": "mm",
         "Alfa_y_2": "rad",

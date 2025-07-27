@@ -13,9 +13,13 @@ import pandas as pd
 from utils.geometry_utils import (
     calculate_addendum_lowering,
     calculate_contact_path_parameters,
-    calculate_equivalent_radii,
+    calculate_deformation_loading,
+    calculate_equivalent_rho,
+    calculate_load_delta,
+    calculate_min_equivalent_radii,
     log_calculation_results,
     save_geometry_parameters,
+    save_simulation_data,
 )
 
 TOOL_PROFILE = {
@@ -186,12 +190,17 @@ def calculate_gear_geometry(params: Dict[str, float]) -> Dict[str, float]:
 
         # Calculate contact path parameters
         contact_params = calculate_contact_path_parameters(
-            base_d_pinion, addendum_d_pinion, addendum_d_gear, center_distance
+            base_d_pinion,
+            addendum_d_pinion,
+            addendum_d_gear,
+            center_distance,
+            module,
+            pressure_angle_rad,
         )
         calculated_params.update(contact_params)
 
         # Calculate equivalent radii for two-cylinder model
-        equivalent_radii = calculate_equivalent_radii(base_d_pinion, contact_params)
+        equivalent_radii = calculate_min_equivalent_radii(base_d_pinion, contact_params)
         calculated_params.update(equivalent_radii)
 
         # Log calculation results
@@ -203,6 +212,48 @@ def calculate_gear_geometry(params: Dict[str, float]) -> Dict[str, float]:
         raise KeyError(f"Missing required parameter: {e}")
     except (ValueError, np.linalg.LinAlgError) as e:
         raise ValueError(f"Invalid calculation result: {e}")
+
+
+def load_geometry_parameters(gear_label: str) -> Dict[str, float]:
+    """Load geometry parameters for a specific gear label from saved file."""
+    geometry_file = f"processed_data/{gear_label}_geometry_parameters.csv"
+    try:
+        df = pd.read_csv(geometry_file)
+        return {
+            k: float(v) for k, v in df.set_index("parameter")["value"].to_dict().items()
+        }
+    except Exception as e:
+        raise OSError(f"Failed to load geometry parameters from {geometry_file}: {e}")
+
+
+def calculate_simulation_data(
+    gear_label: str, points: int = 1000
+) -> Dict[str, List[float]]:
+    """Calculate and return simulation data for a specific gear label."""
+    geometry_params = load_geometry_parameters(gear_label)
+    contact_path = np.linspace(0, geometry_params["g_alpha"], num=points).tolist()
+    N1E = geometry_params["N_1E"]
+    N2F = geometry_params["N_2F"]
+    calc_sim_data = {}
+    eq_rho = calculate_equivalent_rho(
+        (
+            geometry_params["base_diameter_pinion"] / 2,
+            geometry_params["base_diameter_gear"] / 2,
+        ),
+        (N1E, N2F),
+        contact_path,
+    )
+    deformation_loading = calculate_deformation_loading(eq_rho, gear_label)
+    calc_sim_data["contact_path"] = contact_path
+    calc_sim_data["rho_pinion"] = eq_rho["rho_pinion"]
+    calc_sim_data["R_y_pinion"] = eq_rho["R_y_pinion"]
+    calc_sim_data["rho_gear"] = eq_rho["rho_gear"]
+    calc_sim_data["R_y_gear"] = eq_rho["R_y_gear"]
+    calc_sim_data["deformation_loading"] = deformation_loading["deformation_loading"]
+    load_delta = calculate_load_delta(calc_sim_data)
+    calc_sim_data["load_delta"] = load_delta
+
+    return calc_sim_data
 
 
 def calculate_geometry_for_label(gear_label: str) -> bool:
@@ -217,7 +268,7 @@ def calculate_geometry_for_label(gear_label: str) -> bool:
                 print(f"   {error}")
             return False
         calculated_params = calculate_gear_geometry(params)
-        save_geometry_parameters(gear_label, calculated_params)
+        save_geometry_parameters(gear_label, params, calculated_params)
         print(f"✅ Geometry calculated and saved for {gear_label}")
         return True
     except Exception as e:
@@ -241,6 +292,18 @@ def main() -> None:
         for gear_label in geometries_to_calc:
             if calculate_geometry_for_label(gear_label):
                 successful_calculations += 1
+
+        print("\nSTEP 4: Calculating and saving simulation data...")
+        for gear_label in geometries_to_calc:
+            try:
+                sim_data = calculate_simulation_data(gear_label, 1000)
+                save_simulation_data(sim_data, gear_label)
+                print(f"✅ Simulation data calculated and saved for {gear_label}")
+            except Exception as e:
+                print(
+                    f"❌ Error calculating/saving simulation data for {gear_label}: {e}"
+                )
+
         print(f"\n{'=' * 60}")
         print("📊 CALCULATION SUMMARY")
         print(f"{'=' * 60}")
@@ -253,6 +316,15 @@ def main() -> None:
             print("⚠️  Some calculations failed. Check error messages above.")
     except Exception as e:
         print(f"❌ Error in geometry calculation: {e}")
+
+
+def read_txt_file(filepath: str) -> List[float]:
+    """Read a tab-separated file, skipping comment lines, and return a list of floats."""
+    with open(filepath, "r") as f:
+        lines = [line for line in f if not line.strip().startswith("//")]
+    # Join all lines and split by tab
+    data = "\t".join([line.strip() for line in lines]).split("\t")
+    return [float(x) for x in data if x.strip()]
 
 
 if __name__ == "__main__":
