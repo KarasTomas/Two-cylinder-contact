@@ -281,19 +281,19 @@ def main() -> None:
     print("🧮 TWO-CYLINDER CONTACT GEOMETRY CALCULATION")
     print("=" * 60)
     try:
-        print("\nSTEP 2: Loading geometries to calculate...")
+        print("\nSTEP 1: Loading geometries to calculate...")
         geometries_to_calc = get_geometries_to_calculate()
         if not geometries_to_calc:
             print("❌ No geometries marked for calculation in config file")
             return
         print(f"📋 Found {len(geometries_to_calc)} geometries: {geometries_to_calc}")
-        print("\nSTEP 3: Processing geometries...")
+        print("\nSTEP 2: Processing geometries...")
         successful_calculations = 0
         for gear_label in geometries_to_calc:
             if calculate_geometry_for_label(gear_label):
                 successful_calculations += 1
 
-        print("\nSTEP 4: Calculating and saving simulation data...")
+        print("\nSTEP 3: Calculating and saving simulation data...")
         for gear_label in geometries_to_calc:
             try:
                 sim_data = calculate_simulation_data(gear_label, 1000)
@@ -303,17 +303,6 @@ def main() -> None:
                 print(
                     f"❌ Error calculating/saving simulation data for {gear_label}: {e}"
                 )
-
-        print(f"\n{'=' * 60}")
-        print("📊 CALCULATION SUMMARY")
-        print(f"{'=' * 60}")
-        print(
-            f"✅ Successful: {successful_calculations}/{len(geometries_to_calc)} geometries"
-        )
-        if successful_calculations == len(geometries_to_calc):
-            print("🎉 All geometry calculations completed successfully!")
-        else:
-            print("⚠️  Some calculations failed. Check error messages above.")
     except Exception as e:
         print(f"❌ Error in geometry calculation: {e}")
 
